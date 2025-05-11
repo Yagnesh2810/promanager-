@@ -36,7 +36,14 @@ This is the backend for the ProManage+ application, built with Node.js and Expre
    Create a `.env` file in the root directory with the following variables:
    ```plaintext
    MONGODB_URI=your_mongodb_atlas_connection_string
-   JWT_SECRET=your_jwt_secret
+   JWT_SECRET=your_random_string_here
+   ```
+
+   You can generate a secure random string for `JWT_SECRET` using the following example in Node.js:
+   ```javascript
+   const crypto = require('crypto');
+   const secret = crypto.randomBytes(64).toString('hex');
+   console.log(secret);
    ```
 
 4. Run the development server:
